@@ -6,9 +6,9 @@ import joblib
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
-model = joblib.load("model.pkl")  # Trained genre classifier
-tfidf = joblib.load("tfidf.pkl")  # Trained TF-IDF vectorizer
-mlb = joblib.load("mlb.pkl")      # MultiLabelBinarizer for genres
+model = joblib.load("models/model.pkl")  # Trained genre classifier
+tfidf = joblib.load("models/tfidf.pkl")  # Trained TF-IDF vectorizer
+mlb = joblib.load("models/mlb.pkl")      # MultiLabelBinarizer for genres
 
 @app.get("/", response_class=HTMLResponse)
 def form_get(request: Request):
